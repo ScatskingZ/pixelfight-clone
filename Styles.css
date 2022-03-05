@@ -1,0 +1,59 @@
+html, body
+{
+    background-color: rgb(0, 0, 50);
+}
+
+#container
+{
+    background-color: rgb(0, 0, 100);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition-duration: .25s;
+}
+
+#canvas
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition-duration: .25s;
+}
+
+#speed
+{
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%);
+}
+
+#gls
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aqua;
+    position: absolute;
+    left: 50%;
+    top: 3%;
+    transform: translate(-50%);
+}
+
+#gridsize
+{
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%);
+}
+
+#gs
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aqua;
+    position: absolute;
+    left: 50%;
+    top: 83%;
+    transform: translate(-50%);
+}
