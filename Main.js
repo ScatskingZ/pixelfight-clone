@@ -8,10 +8,8 @@ const randint = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-const t1c = [randint(100, 255), randint(100, 255), randint(100, 255)]
-
-const t1 = `rgb(${t1c[0]}, ${t1c[1]}, ${t1c[2]})`;
-const t2 = `rgb(${255 - t1c[0]}, ${255 - t1c[1]}, ${255 - t1c[2]})`;
+let t1 = 1;
+let t2 = 2;
 
 const reset = () =>
 {
@@ -64,7 +62,9 @@ const loop = () => {
         {
             if (i == 0 || j == 0 || i == gridsize - 1 || j == gridsize - 1) continue;
             update();
-            ctx.fillStyle = grid[i][j];
+            let tt1 = document.getElementById("color1").value;
+            let tt2 = document.getElementById("color2").value;
+            ctx.fillStyle = grid[i][j] == 1 ? tt1 : tt2;
             ctx.fillRect(i * (size / gridsize), j * (size / gridsize), size / gridsize, size / gridsize);
         }
 
