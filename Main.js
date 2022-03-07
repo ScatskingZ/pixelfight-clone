@@ -41,6 +41,30 @@ const adjustContainer = () => {
     canvas.height = size;
 
     loopSpeed = document.getElementById("speed").value;
+
+    updatePercent();
+}
+
+const updatePercent = () => {
+    let p = 0;
+
+    for (let i = 0; i < gridsize; i++)
+        for (let j = 0; j < gridsize; j++)
+        {
+            if (i == 0 || j == 0 || i == gridsize - 1 || j == gridsize - 1) continue;
+            if (grid[i][j] == 1) p++;
+        }
+
+    function percentage(percent, total) {
+        return ((percent / total) * 100).toFixed(2)
+    }
+
+    p = percentage(p, (gridsize * gridsize));
+
+    document.getElementById("t1").innerHTML = Math.round(p) + "%";
+    document.getElementById("t1").style.color = document.getElementById("color1").value;
+    document.getElementById("t2").innerHTML = 100 - Math.round(p) + "%";
+    document.getElementById("t2").style.color = document.getElementById("color2").value
 }
 
 const update = () => {
@@ -60,8 +84,8 @@ const loop = () => {
     for (let i = 0; i < gridsize; i++)
         for (let j = 0; j < gridsize; j++)
         {
-            if (i == 0 || j == 0 || i == gridsize - 1 || j == gridsize - 1) continue;
             update();
+            if (i == 0 || j == 0 || i == gridsize - 1 || j == gridsize - 1) continue;
             let tt1 = document.getElementById("color1").value;
             let tt2 = document.getElementById("color2").value;
             ctx.fillStyle = grid[i][j] == 1 ? tt1 : tt2;
