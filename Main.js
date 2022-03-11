@@ -59,7 +59,7 @@ const updatePercent = () => {
         return ((percent / total) * 100).toFixed(2)
     }
 
-    p = percentage(p, (gridsize * gridsize));
+    p = percentage(p, ((gridsize - 2) * (gridsize - 2)));
 
     document.getElementById("t1").innerHTML = Math.round(p) + "%";
     document.getElementById("t1").style.color = document.getElementById("color1").value;
